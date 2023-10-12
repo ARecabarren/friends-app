@@ -21,10 +21,11 @@
 
     <%= render "home/header" %>
     <br>
+    <% if notice %>
+      <%= render 'layouts/alerts'%>
+    <% end %>
     <%= yield %>
     <br>
-    <p>
-      Footers here
-    </p>
+    
   </body>
 </html>

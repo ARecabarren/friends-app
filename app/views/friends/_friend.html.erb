@@ -1,27 +1,17 @@
-<div id="<%= dom_id friend %>">
-  <p>
-    <strong>First name:</strong>
-    <%= friend.first_name %>
-  </p>
-
-  <p>
-    <strong>Last name:</strong>
-    <%= friend.last_name %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= friend.email %>
-  </p>
-
-  <p>
-    <strong>Phone:</strong>
-    <%= friend.phone %>
-  </p>
-
-  <p>
-    <strong>Twitter:</strong>
-    <%= friend.twitter %>
-  </p>
-
+<div class="card" style="width: 55%;">
+  <svg class="card-img-top" height="100px" width="100px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60.671 60.671" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <ellipse style="fill:#010002;" cx="30.336" cy="12.097" rx="11.997" ry="12.097"></ellipse> <path style="fill:#010002;" d="M35.64,30.079H25.031c-7.021,0-12.714,5.739-12.714,12.821v17.771h36.037V42.9 C48.354,35.818,42.661,30.079,35.64,30.079z"></path> </g> </g> </g></svg>
+  <div class="card-body">
+    <h5 class="card-title">Name</h5>
+    <p class="card-body"><%= friend.first_name %> <%= friend.last_name %></p>
+    <h5 class="card-title">Email</h5>
+    <p class="card-body"><%= friend.email %></p>
+    <h4 class="card-title">Phone | Twitter</h4>
+    <p class="card-body"><%= friend.phone%> | <%= friend.twitter%></p>
+    <div class="container">
+    <%= link_to "Edit this friend", edit_friend_path(@friend), class:'btn btn-info' %> 
+    <%= link_to "Back to friends", friends_path, class:'btn btn-info' %>
+    <br></br>
+    <%= button_to "Destroy this friend", @friend, method: :delete, class:'btn btn-danger' %>
+</div>
+  </div>
 </div>
